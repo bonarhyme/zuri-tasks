@@ -1,0 +1,46 @@
+body {
+  background-color: black;
+}
+
+section {
+  display: grid;
+  background-color: white;
+  width: 600px;
+  height: 500px;
+  gap: 0.7rem;
+  padding: 0.5rem;
+  grid-template-areas:
+    "one one one two two"
+    "one one one two two"
+    "three three four four four"
+    "three three five five five";
+}
+
+@media (max-width: 768px) {
+  section {
+    width: 400px;
+    height: 350px;
+  }
+}
+
+.one {
+  background-color: red;
+  grid-area: one;
+}
+.two {
+  background-color: yellow;
+  grid-area: two;
+}
+.three {
+  background-color: aqua;
+  grid-area: three;
+}
+.four {
+  background-color: pink;
+  grid-area: four;
+}
+
+.five {
+  background-color: purple;
+  grid-area: five;
+}
