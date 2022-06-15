@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Form</title>
+  </head>
+  <body>
+    <main>
+      <section class="section">
+        <div class="text-container">
+          <h1 class="heading">Learn to code by watching others</h1>
+          <p class="paragraph">
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
+        <div class="form-container">
+          <p><b>Try it free 7 days</b> then $20/mo, thereafter</p>
+          <form action="#">
+            <div class="form-control">
+              <input
+                type="text"
+                placeholder="First Name"
+                pattern="[A-Za-z]{2,}"
+                class="input"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="error icon"
+                width="20"
+                height="20"
+              />
+              <small>First name cannot be empty</small>
+            </div>
+            <div class="form-control">
+              <input
+                type="text"
+                placeholder="Last Name"
+                minlength="2"
+                pattern="[A-Za-z]{2,}"
+                class="input"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="error icon"
+                width="20"
+                height="20"
+              />
+              <small>Last name cannot be empty</small>
+            </div>
+            <div class="form-control">
+              <input type="email" placeholder="Email Address" class="input" />
+              <img
+                src="./images/icon-error.svg"
+                alt="error icon"
+                width="20"
+                height="20"
+              />
+              <small>Looks like this is not an email</small>
+            </div>
+            <div class="form-control">
+              <input
+                type="password"
+                placeholder="Password"
+                pattern="[A-Za-z]{6,}"
+                class="input"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="error icon"
+                width="20"
+                height="20"
+              />
+              <small>Password cannot be empty</small>
+            </div>
+            <div class="form-control">
+              <input type="submit" value="CLAIM YOUR FREE TRIAL" />
+            </div>
+
+            <small
+              >By clicking on the button, you are agreeing to our
+              <a href="#" class="terms">Terms and Services</a>
+            </small>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script>
+      const inputs = document.querySelectorAll(".input");
+      const form = document.querySelector("form");
+
+      inputs.forEach((input) => {
+        input.addEventListener("focus", removeInvalid);
+      });
+
+      function removeInvalid(e) {
+        e.target.classList.remove("invalid");
+      }
+
+      form.addEventListener("submit", handleSubmit);
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        inputs.forEach((input) => {
+          if (
+            input.value === "" ||
+            (input.type === "email" && !validateEmail(input.value))
+          ) {
+            input.classList = "invalid";
+          }
+        });
+      }
+
+      const validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(/\S+@\S+\.\S+/);
+      };
+    </script>
+  </body>
+</html>

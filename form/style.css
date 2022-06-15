@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+.section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-color: #ff7978;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .section {
+    background-image: url(./images/bg-intro-mobile.png);
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .section {
+    background-image: url(./images/bg-intro-desktop.png);
+    flex-direction: row;
+  }
+}
+.text-container,
+.form-container {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text-container {
+  color: white;
+}
+
+.text-container .heading {
+  font-size: 3.5rem;
+  margin: 0;
+}
+.text-container .paragraph {
+  font-size: 1.1rem;
+}
+
+.form-container p {
+  background-color: #5d54a3;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.form-container form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.form-container .form-control {
+  display: flex;
+  height: 4rem;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  position: relative;
+  flex-direction: column;
+}
+.form-container .form-control small {
+  color: red;
+  opacity: 0;
+}
+
+.form-container .form-control input.invalid ~ small {
+  opacity: 1;
+}
+
+.form-container input:focus {
+  border-color: rgb(126, 126, 126);
+}
+
+.form-container input {
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgb(204, 204, 204);
+  border-radius: 10px;
+  padding-left: 1rem;
+}
+.form-container input[type="submit"] {
+  background-color: #37cc8a;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  height: 80%;
+}
+.form-container img {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  display: none;
+}
+
+.form-container input::placeholder {
+  opacity: 0.9;
+}
+.form-container input.invalid {
+  border-color: red;
+  color: red;
+}
+.form-container input:invalid {
+  border-color: red;
+  color: red;
+}
+
+.terms {
+  color: red;
+  text-decoration: none;
+}
