@@ -52,7 +52,7 @@ section {
   grid-area: five;
 }
 
-a {
+.anchor {
   background-color: hsl(0, 0%, 95%);
   color: var(--background-color);
   border: 2px solid hsl(0, 0%, 95%);
@@ -64,8 +64,8 @@ a {
   text-decoration: none;
 }
 
-a:active,
-a:hover {
+.anchor:active,
+.anchor:hover {
   background-color: transparent;
   color: hsl(0, 0%, 95%);
 }
