@@ -1,6 +1,13 @@
 body {
   background-color: black;
 }
+main {
+  display: grid;
+  place-items: center;
+  padding: 3rem 0;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 section {
   display: grid;
@@ -43,4 +50,22 @@ section {
 .five {
   background-color: purple;
   grid-area: five;
+}
+
+a {
+  background-color: hsl(0, 0%, 95%);
+  color: var(--background-color);
+  border: 2px solid hsl(0, 0%, 95%);
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 25px;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: max-content;
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  background-color: transparent;
+  color: hsl(0, 0%, 95%);
 }
