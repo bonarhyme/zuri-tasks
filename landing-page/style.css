@@ -50,10 +50,7 @@ img {
   box-shadow: 0 0 5px 5px rgb(240, 240, 240);
   text-decoration: none;
   height: fit-content;
-  width: fit-content;
-  animation-name: shake;
-  animation-duration: 1s;
-  animation-iteration-count: 5;
+  width: max-content;
 }
 
 @keyframes shake {
@@ -97,6 +94,9 @@ img {
 .anchor-button.one {
   background-color: white;
   color: black;
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-iteration-count: 5;
 }
 
 .anchor-button.two {
